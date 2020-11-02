@@ -1,7 +1,7 @@
 <?php
 // used to connect to the database
 $host = "localhost";
-$db_name = "db_tis";
+$db_name = "DOST";
 $username = "root";
 $password = "";
   
