@@ -40,7 +40,7 @@ $stmt->execute();
 $num = $stmt->rowCount();
  
 // link to create record form
-echo "<a href='create.php' class='btn btn-primary m-b-1em'>New Employee</a>";
+echo "<a href='create.php' class='btn btn-primary m-b-1em'>New Record</a>";
  
 //check if more than 0 record found
 if($num>0){
