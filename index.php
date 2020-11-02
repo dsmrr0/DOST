@@ -31,7 +31,7 @@ include 'config/database.php';
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT emp_id, emp_fname, emp_lname, emp_branch FROM employee ORDER BY emp_id DESC";
+$query = "SELECT ID, DOCUMENT_TYPE, DOCUMENT_CATEGORY, DOCUMENT_TITLE, DOCUMENT_DESCRIPTION FROM DOSTPCHRD ORDER BY ID DESC";
 $res = mysqli_query($query);
 $stmt = $con->prepare($query);
 $stmt->execute();
@@ -52,7 +52,15 @@ if($num>0){
         echo "<th>ID</th>";
         echo "<th>Document Type</th>";
         echo "<th>Document Category</th>";
-        echo "<th></th>";
+        echo "<th>Document Title</th>";
+        echo "<th>Document Description</th>";
+        echo "<th>Attachment</th>";
+        echo "<th>Created By (Name)</th>";
+        echo "<th>Created By (Designation)</th>";
+        echo "<th>Created By (Role)</th>";
+        echo "<th>Created By (Email)</th>";
+        
+    
  
     echo "</tr>";
      
@@ -63,10 +71,13 @@ while ($row = $mysql_fetch_array($res)){
      
     // creating new table row per record
     echo "<tr>";
-        echo "<td>{$emp_id}</td>";
-        echo "<td>{$emp_fname}</td>";
-        echo "<td>{$emp_lname}</td>";
-        echo "<td>{$emp_branch}</td>";
+        echo "<td>{$ID}</td>";
+        echo "<td>{$DOCUMENT_TYPE}</td>";
+        echo "<td>{$DOCUMENT_CATEGORY}</td>";
+        echo "<td>{$DOCUMENT_TITLE}</td>";
+        echo "<td>{$DOCUMENT_DESCRIPTION}</td>";
+        echo "<td>{$ATTACHMENT}</td>";
+        echo "<td>{$CRT_NAME}</td>";
     echo "</tr>";
 }
  
