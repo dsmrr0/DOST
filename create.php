@@ -174,6 +174,13 @@ if($num>0){
         echo "<th>DOCUMENT CATEGORY</th>";
         echo "<th>DOCUMENT TITLE</th>";
         echo "<th>DOCUMENT DESCRIPTION</th>";
+        echo "<th>ATTACHMENT</th>";
+        echo "<th>CREATED BY (NAME)</th>";
+        echo "<th>CREATED BY (DESIGNATION)</th>";
+        echo "<th>CREATED BY (ROLE)</th>";
+        echo "<th>CREATED BY (EMAIL)</th>";
+  
+    
  
     echo "</tr>";
      
@@ -189,17 +196,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         echo "<td>{$DOCUMENT_CATEGORY}</td>";
         echo "<td>{$DOCUMENT_TITLE}</td>";
         echo "<td>{$DOCUMENT_DESCRIPTION}</td>";
-        echo "<td>";
-            // read one record 
-        echo "<a href='read_one.php?id={$emp_id}' class='btn btn-info m-r-1em'>Read</a>";
-             
-            // we will use this links on next part of this post
-            echo "<a href='update1.php?id={$emp_id}' class='btn btn-primary m-r-1em'>Edit</a>";
- 
-            // we will use this links on next part of this post
-
-            echo "<a href='delete.php?id={$emp_id}' class='btn btn-danger'>Delete</a>";
-        echo "</td>";
+        echo "<td>{$ATTACHMENT}</td>";
+        echo "<td>{$CRT_NAME}</td>";
+        echo "<td>{$CRT_DES}</td>";
+        echo "<td>{$CRT_ROLE}</td>";
+        echo "<td>{$CRT_EMAIL}</td>";
+        
     echo "</tr>";
 }
  
