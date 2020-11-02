@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Employee Records</title>
+    <title>DOST-PCHRD</title>
      
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -21,7 +21,7 @@
     <div class="container">
   
         <div class="page-header">
-            <h1>Employee Records</h1>
+            <h1>DOST</h1>
         </div>
      
         <?php
