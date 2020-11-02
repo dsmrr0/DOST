@@ -25,24 +25,36 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO DOSTPCHRD SET emp_id=:emp_id, emp_fname=:emp_fname, emp_lname=:emp_lname, emp_mi=:emp_mi, emp_branch=:emp_branch";
+        $query = "INSERT INTO DOSTPCHRD SET ID=:ID, DOCUMENT_TYPE=:DTYPE, DOCUMENT_CATEGORY=:DCAT, DOCUMENT_TITLE=:DTIT, DOCUMENT_DESCRIPTION=:DDESC, ATTACHMENT=:ATT, CRT_NAME=:CRTN, CRT_DES=:CRTD, CRT_ROLE=:CRTR, CRT_EMAIL=:CRTE";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
  
         // posted values
-        $emp_id=htmlspecialchars(strip_tags($_POST['emp_id']));
-        $emp_fname=htmlspecialchars(strip_tags($_POST['emp_fname']));
-        $emp_lname=htmlspecialchars(strip_tags($_POST['emp_lname']));
-        $emp_mi=htmlspecialchars(strip_tags($_POST['emp_mi']));
-        $emp_branch=htmlspecialchars(strip_tags($_POST['emp_branch']));
+        $ID=htmlspecialchars(strip_tags($_POST['ID']));
+        $DTYPE=htmlspecialchars(strip_tags($_POST['DTYPE']));
+        $DCAT=htmlspecialchars(strip_tags($_POST['DCAT']));
+        $DTIT=htmlspecialchars(strip_tags($_POST['DTIT']));
+        $DDESC=htmlspecialchars(strip_tags($_POST['DDESC']));
+        $ATT=htmlspecialchars(strip_tags($_POST['ATT']));
+        $CRTN=htmlspecialchars(strip_tags($_POST['CRTN']));
+        $CRTD=htmlspecialchars(strip_tags($_POST['CRTD']));
+        $CRTR=htmlspecialchars(strip_tags($_POST['CRTR']));
+        $CRTEh=htmlspecialchars(strip_tags($_POST['CRTE']));
+
  
         // bind the parameters
-        $stmt->bindParam(':emp_id', $emp_id);
-        $stmt->bindParam(':emp_fname', $emp_fname);
-        $stmt->bindParam(':emp_lname', $emp_lname);
-        $stmt->bindParam(':emp_mi', $emp_mi);
-        $stmt->bindParam(':emp_branch', $emp_branch);
+        $stmt->bindParam(':ID', $ID);
+        $stmt->bindParam(':DTYPE', $DTYPE);
+        $stmt->bindParam(':DCAT', $DCAT);
+        $stmt->bindParam(':DTIT', $DTIT);
+        $stmt->bindParam(':DDESC', $DDESC);
+        $stmt->bindParam(':ATT', $ATT);
+        $stmt->bindParam(':CRTN', $CRTN);
+        $stmt->bindParam(':CRTD', $CRTD);
+        $stmt->bindParam(':CRTR', $CRTR);
+        $stmt->bindParam(':CRTE', $CRTE);
+
          
          
         // Execute the query
@@ -65,49 +77,46 @@ if($_POST){
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <table class='table table-hover table-responsive table-bordered'>
        
-        <tr>
-            <td>ID</td>
-            <td><input type='text' name='emp_fname' class='form-control' /></td>
-        </tr>
+ 
         <tr>
             <td>Document Type</td>
-            <td><input type='text' name='emp_lname' class='form-control'></td>
+            <td><input type='text' name='DOCUMENT_TYPE' class='form-control'></td>
         </tr>
         <tr>
             <td>Document Category</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='DOCUMENT_CATEGORY' class='form-control'></td>
         </tr>
         <tr>
             <td>Document Title</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='DOCUMENT_TITLE' class='form-control'></td>
         </tr>
         <tr>
             <td>Document Description</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='DOCUMENT_DESCRIPTION' class='form-control'></td>
         </tr>
          <tr>
             <td>Attachment</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='ATTACHEMENT' class='form-control'></td>
         </tr>
         <tr>
             <td>Created By (Name)</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='CRT_NAME' class='form-control'></td>
         </tr>
         <tr>
             <td>Created By (Designation)</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='CRT_DES' class='form-control'></td>
         </tr>
         <tr>
             <td>Created By (Role)</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='CRT_ROLE' class='form-control'></td>
         </tr>
         <tr>
             <td>Created By (Email)</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='CRT_EMAIL' class='form-control'></td>
         </tr>
         <tr>
             <td>Updated By (Name)</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
+            <td><input type='text' name='' class='form-control'></td>
         </tr>
         <tr>
             <td>Updated By (Desigantion)</td>
@@ -121,20 +130,8 @@ if($_POST){
             <td>Updated By (Email)</td>
             <td><input type='text' name='emp_mi' class='form-control'></td>
         </tr>
-        <tr>
-            <td>Date Created</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
-        </tr>
-        <tr>
-            <td>Date Created</td>
-            <td><input type='text' name='emp_mi' class='form-control'></td>
-        </tr>
-                             <tr>
-                                    <td><input type="text" name="one" placeholder="" required /></td>
-                                    <td><input type="number" name="two" placeholder="" style="height:25px; width: 190px; margin-top: -20px;" required /></td>
-                                </tr>
-                            </table>
-                            <input type="button" name="btn" onclick="courseunit()" value="Add More">
+
+                          
         <tr>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
@@ -156,7 +153,7 @@ if($action=='deleted'){
 }
  
 // select all data
-$query = "SELECT emp_id, emp_fname, emp_lname, emp_mi, emp_branch FROM employee ORDER BY emp_id DESC";
+$query = "SELECT ID, DOCUMENT_TYPE, DOCUMENT_CATEGORY, DOCUMENT_TITLE, DOCUMENT_DESCRIPTION FROM DOSTPCHRD ORDER BY ID DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
@@ -173,10 +170,10 @@ if($num>0){
     //creating our table heading
     echo "<tr>";
         echo "<th>ID</th>";
-        echo "<th>First Name</th>";
-        echo "<th>Last Name</th>";
-        echo "<th>Middle Initial</th>";
-        echo "<th>DENR Branch</th>";
+        echo "<th>DOCUMENT TYPE</th>";
+        echo "<th>DOCUMENT CATEGORY</th>";
+        echo "<th>DOCUMENT TITLE</th>";
+        echo "<th>DOCUMENT DESCRIPTION</th>";
  
     echo "</tr>";
      
@@ -187,11 +184,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
      
     // creating new table row per record
     echo "<tr>";
-        echo "<td>{$emp_id}</td>";
-        echo "<td>{$emp_fname}</td>";
-        echo "<td>{$emp_lname}</td>";
-        echo "<td>{$emp_mi}</td>";
-        echo "<td>{$emp_branch}</td>";
+        echo "<td>{$ID}</td>";
+        echo "<td>{$DTYPE}</td>";
+        echo "<td>{$DCAT}</td>";
+        echo "<td>{$DTIT}</td>";
+        echo "<td>{$DDESC}</td>";
         echo "<td>";
             // read one record 
         echo "<a href='read_one.php?id={$emp_id}' class='btn btn-info m-r-1em'>Read</a>";
