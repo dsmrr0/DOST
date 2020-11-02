@@ -13,7 +13,7 @@
     <div class="container">
    
         <div class="page-header">
-            <h1>Online Re-Admission Form</h1>
+            <h1>DOST-PCHRD</h1>
         </div>
       
 <?php
@@ -25,7 +25,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO employee SET emp_id=:emp_id, emp_fname=:emp_fname, emp_lname=:emp_lname, emp_mi=:emp_mi, emp_branch=:emp_branch";
+        $query = "INSERT INTO DOSTPCHRD SET emp_id=:emp_id, emp_fname=:emp_fname, emp_lname=:emp_lname, emp_mi=:emp_mi, emp_branch=:emp_branch";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -66,70 +66,78 @@ if($_POST){
     <table class='table table-hover table-responsive table-bordered'>
        
         <tr>
-            <td>First Name</td>
+            <td>ID</td>
             <td><input type='text' name='emp_fname' class='form-control' /></td>
         </tr>
         <tr>
-            <td>Last Name</td>
+            <td>Document Type</td>
             <td><input type='text' name='emp_lname' class='form-control'></td>
         </tr>
         <tr>
-            <td>Middle Initial</td>
+            <td>Document Category</td>
             <td><input type='text' name='emp_mi' class='form-control'></td>
         </tr>
         <tr>
-            <td>Term</td>
+            <td>Document Title</td>
             <td><input type='text' name='emp_mi' class='form-control'></td>
         </tr>
         <tr>
-            <td>School Year</td>
+            <td>Document Description</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+         <tr>
+            <td>Attachment</td>
             <td><input type='text' name='emp_mi' class='form-control'></td>
         </tr>
         <tr>
-            <td>Failing Grade</td>
-            <td>
-                <form action="function dd.php" method="post">
-                    <select name="emp_branch">
-                    <option value="Loakan">74</option>
-                    <option value="Loakan">73</option>
-                        <option value="Loakan">72</option>
-                        <option value="Loakan">71</option>
-                        <option value="Loakan">70</option>
-                    </select>
-                </form>
-            </td>
+            <td>Created By (Name)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
         </tr>
         <tr>
-        <td>Unofficially Dropped</td>
-        <td>
-                            <input type="radio" name="yes" value="yes"> yes
-                            <input type="radio" name="yes" value="no"> no<br><br> 
-        </td>
-            </tr>
-        <table id="t01">
-                                <tr id="tdfirst">
-                                    <td>Courses</td>
-                                    <td>Unit</td>
-                                </tr>
-                                <tr>
+            <td>Created By (Designation)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Created By (Role)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Created By (Email)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Updated By (Name)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Updated By (Desigantion)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Updated By (Role)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Updated By (Email)</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Date Created</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+        <tr>
+            <td>Date Created</td>
+            <td><input type='text' name='emp_mi' class='form-control'></td>
+        </tr>
+                             <tr>
                                     <td><input type="text" name="one" placeholder="" required /></td>
                                     <td><input type="number" name="two" placeholder="" style="height:25px; width: 190px; margin-top: -20px;" required /></td>
                                 </tr>
                             </table>
                             <input type="button" name="btn" onclick="courseunit()" value="Add More">
         <tr>
-            <td></td>
-            <br>
-            
-            <br>
-            <label><b>due to (reason/s)</b></label>
-                            <textarea id="reason" name="reason" placeholder="Write the reasons.." style="height:100px" required></textarea>
-                            
-                            <label><b>I promise</b></label>
-                            <textarea id="promise" name="promise" placeholder="I promise.." style="height:100px" required></textarea>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
-               
             </td>
         </tr>
     </table>
