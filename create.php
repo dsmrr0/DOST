@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Employee</title>
+    <title>DOST=PCHRD</title>
       
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -25,35 +25,35 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO DOSTPCHRD SET ID=:ID, DOCUMENT_TYPE=:DTYPE, DOCUMENT_CATEGORY=:DCAT, DOCUMENT_TITLE=:DTIT, DOCUMENT_DESCRIPTION=:DDESC, ATTACHMENT=:ATT, CRT_NAME=:CRTN, CRT_DES=:CRTD, CRT_ROLE=:CRTR, CRT_EMAIL=:CRTE";
+        $query = "INSERT INTO DOSTPCHRD SET ID=:ID, DOCUMENT_TYPE=:DOCUMENT_TYPE, DOCUMENT_CATEGORY=:DOCUMENT_CATEGORY, DOCUMENT_TITLE=:DOCUMENT_TITLE, DOCUMENT_DESCRIPTION=:DOCUMENT_DESCRIPTION, ATTACHMENT=:ATTACHMENT, CRT_NAME=:CRT_NAME, CRT_DES=:CRT_DES, CRT_ROLE=:CRT_ROLE, CRT_EMAIL=:CRT_EMAIL";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
  
         // posted values
         $ID=htmlspecialchars(strip_tags($_POST['ID']));
-        $DTYPE=htmlspecialchars(strip_tags($_POST['DTYPE']));
-        $DCAT=htmlspecialchars(strip_tags($_POST['DCAT']));
-        $DTIT=htmlspecialchars(strip_tags($_POST['DTIT']));
-        $DDESC=htmlspecialchars(strip_tags($_POST['DDESC']));
-        $ATT=htmlspecialchars(strip_tags($_POST['ATT']));
-        $CRTN=htmlspecialchars(strip_tags($_POST['CRTN']));
-        $CRTD=htmlspecialchars(strip_tags($_POST['CRTD']));
-        $CRTR=htmlspecialchars(strip_tags($_POST['CRTR']));
-        $CRTEh=htmlspecialchars(strip_tags($_POST['CRTE']));
+        $DOCUMENT_TYPE=htmlspecialchars(strip_tags($_POST['DOCUMENT_TYPE']));
+        $DOCUMENT_CATEGORY=htmlspecialchars(strip_tags($_POST['DOCUMENT_CATEGORY']));
+        $DOCUMENT_TITLE=htmlspecialchars(strip_tags($_POST['DOCUMENT_TITLE']));
+        $DOCUMENT_DESCRIPTION=htmlspecialchars(strip_tags($_POST['DOCUMENT_DESCRIPTION']));
+        $ATTACHMENT=htmlspecialchars(strip_tags($_POST['ATTACHMENT']));
+        $CRT_NAME=htmlspecialchars(strip_tags($_POST['CRT_NAME']));
+        $CRT_DES=htmlspecialchars(strip_tags($_POST['CRT_DES']));
+        $CRT_ROLE=htmlspecialchars(strip_tags($_POST['CRT_ROLE']));
+        $CRT_EMAIL=htmlspecialchars(strip_tags($_POST['CRT_EMAIL']));
 
  
         // bind the parameters
         $stmt->bindParam(':ID', $ID);
-        $stmt->bindParam(':DTYPE', $DTYPE);
-        $stmt->bindParam(':DCAT', $DCAT);
-        $stmt->bindParam(':DTIT', $DTIT);
-        $stmt->bindParam(':DDESC', $DDESC);
-        $stmt->bindParam(':ATT', $ATT);
-        $stmt->bindParam(':CRTN', $CRTN);
-        $stmt->bindParam(':CRTD', $CRTD);
-        $stmt->bindParam(':CRTR', $CRTR);
-        $stmt->bindParam(':CRTE', $CRTE);
+        $stmt->bindParam(':DOCUMENT_TYPE', $DOCUMENT_TYPE);
+        $stmt->bindParam(':DOCUMENT_CATEGORY', $DOCUMENT_CATEGORY);
+        $stmt->bindParam(':DOCUMENT_TITLE', $DOCUMENT_TITLE);
+        $stmt->bindParam(':DOCUMENT_DESCRIPTION', $DOCUMENT_DESCRIPTION);
+        $stmt->bindParam(':ATTACHMENT', $ATTACHMENT);
+        $stmt->bindParam(':CRT_NAME', $CRT_NAME);
+        $stmt->bindParam(':CRT_DES', $CRT_DES);
+        $stmt->bindParam(':CRT_ROLE', $CRT_ROLE);
+        $stmt->bindParam(':CRT_EMAIL', $CRT_EMAIL);
 
          
          
@@ -185,10 +185,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // creating new table row per record
     echo "<tr>";
         echo "<td>{$ID}</td>";
-        echo "<td>{$DTYPE}</td>";
-        echo "<td>{$DCAT}</td>";
-        echo "<td>{$DTIT}</td>";
-        echo "<td>{$DDESC}</td>";
+        echo "<td>{$DOCUMENT_TYPE}</td>";
+        echo "<td>{$DOCUMENT_CATEGORY}</td>";
+        echo "<td>{$DOCUMENT_TITLE}</td>";
+        echo "<td>{$DOCUMENT_DESCRIPTION}</td>";
         echo "<td>";
             // read one record 
         echo "<a href='read_one.php?id={$emp_id}' class='btn btn-info m-r-1em'>Read</a>";
