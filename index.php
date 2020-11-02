@@ -31,7 +31,7 @@ include 'config/database.php';
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT ID, DOCUMENT_TYPE, DOCUMENT_CATEGORY, DOCUMENT_TITLE, DOCUMENT_DESCRIPTION FROM DOSTPCHRD ORDER BY ID DESC";
+$query = "SELECT ID, DOCUMENT_TYPE, DOCUMENT_CATEGORY, DOCUMENT_TITLE, DOCUMENT_DESCRIPTION, ATTACHMENT, CRT_NAME, CRT_DES, CRT_ROLE, CRT_EMAIL FROM DOSTPCHRD ORDER BY ID DESC";
 $res = mysqli_query($query);
 $stmt = $con->prepare($query);
 $stmt->execute();
@@ -65,7 +65,7 @@ if($num>0){
     echo "</tr>";
      
 
-while ($row = $mysql_fetch_array($res)){
+while ($row = $mysqli_fetch_array($res)){
   
     extract($row);
      
